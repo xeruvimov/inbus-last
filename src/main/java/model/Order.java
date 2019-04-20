@@ -7,7 +7,7 @@ import javax.persistence.Id;
 @Entity
 public class Order {
     @Id
-    private long id;
+    private Long id;
 
     @Column(name = "number_route")
     private String numberRoute;
@@ -16,7 +16,7 @@ public class Order {
     private String description;
 
     @Column(name = "price")
-    private int price;
+    private Integer price;
 
     public long getId() {
         return id;
