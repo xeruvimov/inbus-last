@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    margin-left: 20px;
+    width: 1000px;
+    background-color: #dad8c1;
+    border-radius: 0 0 5px 5px;
+}
+
+main header {
+    background-color: #aea3a1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+
+main header h3 {
+    font-family: Roboto, sans-serif;
+    font-size: 25px;
+    padding: 10px 0 10px 0;
+    margin: 0;
+}
+
+main section {
+    margin-left: 15px;
+}
+
+.login input, .password input {
+    border-radius: 5px;
+    border: 0;
+    height: 20px;
+    width: 120px;
+}
+
+.password input {
+    float: left;
+}
+
+.password button {
+    border-radius: 5px;
+    border: 0;
+    margin-left: 15px;
+    height: 25px;
+    width: 130px;
+    background-color: #aea3a1;
+}
+
+.password button p {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    margin: 0
+}
+
+.action {
+    margin-top: 16px;
+}
+
+.action button {
+    border-radius: 5px;
+    border: 0;
+    height: 25px;
+    width: 120px;
+    background-color: #aea3a1;
+}
+
+.action button p {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    margin: 0
+}
+
+.action .registration {
+
+}
+
+

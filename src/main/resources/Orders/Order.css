@@ -1,0 +1,52 @@
+.order {
+    margin-top: 15px;
+    width: 1000px;
+}
+
+.order header {
+    background-color: #aea3a1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.order header h4 {
+    margin-left: 25px;
+    font-family: Roboto, sans-serif;
+}
+
+.order header button {
+    border: 0;
+    height: 25px;
+    width: 95px;
+    border-radius: 5px;
+    background-color: #dad8c1;
+    margin-right: 25px;
+}
+
+.order header button p {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.order .description {
+    background-color: #dad8c1;
+    border-radius: 0 0 5px 5px;
+}
+
+.order .description h4 {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    padding-top: 25px;
+    margin: 0 0 10px 0;
+}
+
+.order .description p {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    padding-top: 25px;
+    margin: 10px;
+}
