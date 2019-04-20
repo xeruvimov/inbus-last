@@ -1,6 +1,7 @@
-package model;
+package com.vozili.model;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "contract")
@@ -17,6 +18,12 @@ public class Order {
 
     @Column(name = "price")
     private Integer price;
+
+    @Column(name = "date")
+    private Date date;
+
+    @Column(name = "number_auto")
+    private String numberAuto;
 
     public long getId() {
         return id;
@@ -48,5 +55,21 @@ public class Order {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getNumberAuto() {
+        return numberAuto;
+    }
+
+    public void setNumberAuto(String numberAuto) {
+        this.numberAuto = numberAuto;
     }
 }

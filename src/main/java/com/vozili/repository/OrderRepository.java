@@ -1,6 +1,6 @@
-package repository;
+package com.vozili.repository;
 
-import model.Order;
+import com.vozili.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

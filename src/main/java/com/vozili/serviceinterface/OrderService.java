@@ -1,6 +1,6 @@
-package serviceinterface;
+package com.vozili.serviceinterface;
 
-import model.Order;
+import com.vozili.model.Order;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package service;
+package com.vozili.service;
 
-import model.Order;
+import com.vozili.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.OrderRepository;
-import serviceinterface.OrderService;
+import com.vozili.repository.OrderRepository;
+import com.vozili.serviceinterface.OrderService;
 
 import java.util.List;
 
