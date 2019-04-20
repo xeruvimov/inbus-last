@@ -1,11 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #eae8db;
+}
+
 main {
     width: 1000px;
-    margin-left: 20px;
+    margin-left: 25px;
     background-color: #dad8c1;
     border-radius: 0 0 5px 5px;
 }
 
-header {
+main header {
     background-color: #aea3a1;
     display: flex;
     justify-content: center;
@@ -13,63 +19,49 @@ header {
     border-radius: 5px 5px 0 0;
 }
 
-header h3 {
+main header h3 {
     font-family: Roboto, sans-serif;
     font-size: 25px;
     padding: 10px 0 10px 0;
     margin: 0;
 }
 
-.information {
-    display: flex;
-    justify-content: space-around;
+.info {
+    margin-left: 15px;
 }
 
-.information article p {
-    font-family: Roboto, sans-serif;
-    font-size: 15px;
-}
-
-.information input {
+.info input {
     border-radius: 5px;
+    border: 0;
+    height: 20px;
+    width: 120px;
 }
 
-.information select, .information input {
-    border: 0;
-    width: 120px;
-    height: 20px;
-}
-.description p {
-    margin: 30px 50px 5px 50px;
+.info p {
     font-family: Roboto, sans-serif;
     font-size: 15px;
-}
-
-.description textarea {
-    width: 900px;
-    min-height: 300px;
-    margin: 5px 50px 50px 50px;
 }
 
 footer {
+    margin-top: 15px;
+    width: 1000px;
     height: 50px;
     background-color: #aea3a1;
     display: flex;
     align-items: center;
-    border-radius: 0 0 5px 5px;
 }
 
 footer button {
-    margin-left: 50px;
-    border-radius: 5px;
-    border: 0;
-    height: 25px;
-    width: 90px;
     background-color: #dad8c1;
+    margin-left: 15px;
+    width: 140px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
 }
 
 footer button p {
     margin: 0;
     font-family: Roboto, sans-serif;
-    font-size: 14px;
+    font-size: 13px
 }

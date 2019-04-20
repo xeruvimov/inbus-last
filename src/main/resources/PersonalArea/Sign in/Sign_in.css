@@ -1,6 +1,7 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: #eae8db;
 }
 
 main {
@@ -27,6 +28,11 @@ main header h3 {
 
 main section {
     margin-left: 15px;
+}
+
+main article p{
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
 }
 
 .login input, .password input {
@@ -74,7 +80,7 @@ main section {
 }
 
 .action .registration {
-
+    margin-left: 20px;
 }
 
 
