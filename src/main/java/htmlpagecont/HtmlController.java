@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HtmlController {
 
-    @GetMapping("")
+    @GetMapping("/index")
     public String hello(Model model) {
-        return "Orders";
+        return "Orders/Orders";
     }
 }
