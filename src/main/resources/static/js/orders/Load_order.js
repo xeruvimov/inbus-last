@@ -26,7 +26,10 @@ function createDescription() {
     p.textContent = "test";
     div.appendChild(p);
     let img = document.createElement("img");
-    img.setAttribute("src", "Img/gps_label.png");
-    img.setAttribute("width", "")
+    img.setAttribute("src", "../static/img/gps_label.png");
+    img.style.height = "200px";
+    img.style.width = "900px";
+    img.style.margin = "25px 50px 25px 50px";
+    div.appendChild(img);
     return div;
 }

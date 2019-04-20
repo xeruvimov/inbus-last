@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <link href="../static/css/orders/Navigation.css" rel="stylesheet">
+    <link href="../static/css/orders/Search.css" rel="stylesheet">
+    <link href="../static/css/orders/Orders.css" rel="stylesheet">
+    <link href="../static/css/orders/Order.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="../static/js/orders/Load_order.js"></script>
+</head>
+<body>
+<nav>
+    <button>
+        <p>Предложения</p>
+    </button>
+    <button>
+        <p>Карта</p>
+    </button>
+    <button>
+        <p>Создать заказ</p>
+    </button>
+    <button>
+        <p>Личный кабинет</p>
+    </button>
+    <button>
+        <p>О нас</p>
+    </button>
+</nav>
+<main>
+    <section class="search">
+        <h2 align="center">Я сидел - меня возили</h2>
+        <div class="search_bus">
+            <article>
+                <input placeholder="Номер автобуса" type="text">
+            </article>
+
+            <article>
+                <input placeholder="Макс цена" type="text">
+            </article>
+
+            <article>
+                <input placeholder="Мин цена" type="text">
+            </article>
+
+            <article>
+                <select>
+                    <option>Сортировать по</option>
+                    <option>Сначала дешевые</option>
+                    <option>Сначала дорогие</option>
+                </select>
+            </article>
+            <article>
+                <button>
+                    <p>Поиск</p>
+                </button>
+            </article>
+        </div>
+    </section>
+
+    <section id="orders">
+        <article id="0" class="order">
+            <header>
+                <h4>47 автобус</h4>
+                <h4>50 рублей</h4>
+                <button onclick="addDescription(0)">
+                    <p>Подробнее</p>
+                </button>
+            </header>
+        </article>
+
+        <article id="1" class="order">
+            <header>
+                <h4>47 автобус</h4>
+                <h4>50 рублей</h4>
+                <button onclick="addDescription(1)">
+                    <p>Подробнее</p>
+                </button>
+            </header>
+        </article>
+
+        <article id="2" class="order">
+            <header>
+                <h4>47 автобус</h4>
+                <h4>50 рублей</h4>
+                <button onclick="addDescription(2)">
+                    <p>Подробнее</p>
+                </button>
+            </header>
+        </article>
+
+        <article id="3" class="order">
+            <header>
+                <h4>47 автобус</h4>
+                <h4>50 рублей</h4>
+                <button onclick="addDescription(3)">
+                    <p>Подробнее</p>
+                </button>
+            </header>
+        </article>
+    </section>
+</main>
+</body>
+</html>
