@@ -1,16 +1,18 @@
+
 function getOrders() {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "localhost:8080/orders");
+    xhr.open("GET", "http://localhost:8080/orders",false);
     xhr.send();
 
-    if (xhr.status !== 200) {
+    if (xhr.status == 200) {
         let orders = JSON.parse(xhr.responseText);
+        console.log(orders);
         loadOrders(orders);
     }
 }
 
 function loadOrders(orders) {
-    clearOrders();
+    // clearOrders();
     for (let i = 0; i < orders.length; i++) {
         addOrder(orders[i]);
     }
@@ -67,11 +69,11 @@ function createButtonText() {
     return p;
 }
 
-function clearOrders() {
+/*function clearOrders() {
     let orders = document.getElementById("orders");
     let order = orders.getElementsByClassName("order");
     for (let i = 0; i < order.length; i++) {
         orders.removeChild(order[i]);
     }
-}
+}*/
 

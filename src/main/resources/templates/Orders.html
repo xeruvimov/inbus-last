@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Orders</title>
-    <link href="../static/css/navigation/Navigation.css" rel="stylesheet">
-    <link href="../static/css/orders/Search.css" rel="stylesheet">
-    <link href="../static/css/orders/Orders.css" rel="stylesheet">
-    <link href="../static/css/orders/Order.css" rel="stylesheet">
+    <link href="/css/navigation/Navigation.css" rel="stylesheet">
+    <link href="/css/orders/Search.css" rel="stylesheet">
+    <link href="/css/orders/Orders.css" rel="stylesheet">
+    <link href="/css/orders/Order.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <script src="../static/js/orders/Load_order.js"></script>
-    <script src="../static/js/orders/Orders.js"></script>
+    <script src="/js/orders/Load_order.js"></script>
+    <script src="/js/orders/Orders.js"></script>
 </head>
-<body>
+<body onload="getOrders()">
 <nav>
     <button>
         <p>Предложения</p>
@@ -61,97 +61,7 @@
     </section>
 
     <section id="orders">
-        <article id="0" class="order">
-            <header>
-                <div class="information">
-                    <div class="route_price">
-                        <h4>47 автобус</h4>
-                        <h4>50 рублей</h4>
-                    </div>
-                    <div class="time&car_number">
-                        <div class="time">
-                            <img src="../static/img/time.png"/>
-                            <p>5 минут назад</p>
-                        </div>
-                        <div class="car_number">
-                            <p>О676ХР</p>
-                        </div>
-                    </div>
-                </div>
-                <button onclick="addDescription(0)">
-                    <p>Подробнее</p>
-                </button>
-            </header>
-        </article>
 
-        <article id="1" class="order">
-            <header>
-                <div class="information">
-                    <div class="route_price">
-                        <h4>47 автобус</h4>
-                        <h4>50 рублей</h4>
-                    </div>
-                    <div class="time&car_number">
-                        <div class="time">
-                            <img src="../static/img/time.png"/>
-                            <p>5 минут назад</p>
-                        </div>
-                        <div class="car_number">
-                            <p>О676ХР</p>
-                        </div>
-                    </div>
-                </div>
-                <button onclick="addDescription(1)">
-                    <p>Подробнее</p>
-                </button>
-            </header>
-        </article>
-
-        <article id="2" class="order">
-            <header>
-                <div class="information">
-                    <div class="route_price">
-                        <h4>47 автобус</h4>
-                        <h4>50 рублей</h4>
-                    </div>
-                    <div class="time&car_number">
-                        <div class="time">
-                            <img src="../static/img/time.png"/>
-                            <p>5 минут назад</p>
-                        </div>
-                        <div class="car_number">
-                            <p>О676ХР</p>
-                        </div>
-                    </div>
-                </div>
-                <button onclick="addDescription(2)">
-                    <p>Подробнее</p>
-                </button>
-            </header>
-        </article>
-
-        <article id="3" class="order">
-            <header>
-                <div class="information">
-                    <div class="route_price">
-                        <h4>47 автобус</h4>
-                        <h4>50 рублей</h4>
-                    </div>
-                    <div class="time&car_number">
-                        <div class="time">
-                            <img src="../static/img/time.png"/>
-                            <p>5 минут назад</p>
-                        </div>
-                        <div class="car_number">
-                            <p>О676ХР</p>
-                        </div>
-                    </div>
-                </div>
-                <button onclick="addDescription(3)">
-                    <p>Подробнее</p>
-                </button>
-            </header>
-        </article>
     </section>
 </main>
 </body>

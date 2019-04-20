@@ -1,5 +1,5 @@
 create table if not exists contract (
-id bigint primary key,
+id serial primary key,
 number_route varchar(11) not null,
 description varchar(1000) not null,
 price int not null,
