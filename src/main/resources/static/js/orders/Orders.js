@@ -1,5 +1,3 @@
-getOrders();
-
 function getOrders() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "localhost:8080/orders");

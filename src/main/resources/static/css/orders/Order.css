@@ -11,10 +11,55 @@
     border-radius: 5px;
 }
 
-.order header h4 {
-    margin-left: 25px;
-    font-family: Roboto, sans-serif;
+.order header .info {
+    width: 300px;
 }
+
+.order .route_price {
+    margin: 25px 0 5px 25px;
+    display: flex;
+}
+
+.route_price h4, .time\&car_number .time h4, .time\&car_number .car_number h4 {
+    margin: 0 25px 0 0;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+}
+
+.time\&car_number {
+    margin: 0 5px 10px 25px;
+    display: flex;
+    align-items: center;
+}
+
+.time\&car_number .car_number {
+    margin-left: 25px;
+}
+
+.time\&car_number .car_number p {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+}
+
+.time\&car_number .time {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.time\&car_number .time img {
+    margin: 0 5px 0 0;
+    height: 12px;
+    width: 12px;
+}
+
+.time\&car_number .time p {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+}
+
 
 .order header button {
     border: 0;
