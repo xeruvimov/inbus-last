@@ -49,3 +49,9 @@
     font-size: 14px;
     padding: 10px;
 }
+
+.order map img {
+    height: 200px;
+    width: 900px;
+    margin: 25px 50px 25px 50px;
+}

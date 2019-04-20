@@ -3,7 +3,7 @@ function getOrders() {
     xhr.open("GET", "localhost:8080/orders");
     xhr.send();
 
-    if (xhr.status != 200) {
+    if (xhr.status !== 200) {
         let orders = JSON.parse(xhr.responseText);
         loadOrders(orders);
     }
