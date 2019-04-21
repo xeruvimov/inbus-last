@@ -10,4 +10,6 @@ public interface OrderService {
     List<Order> getAll();
 
     Order save(Order order);
+
+    void delete(Long id);
 }

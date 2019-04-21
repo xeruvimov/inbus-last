@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,5 +32,15 @@ public class OrderRestController {
     @RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<Order> addOrder(@RequestBody Order order) {
         return new ResponseEntity<Order>(orderService.save(order), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<Order> addOrder(@PathVariable Long id) {
+        Order order = orderService.getById(id);
+        if (order == null) {
+            return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
+        }
+        orderService.delete(id);
+        return new ResponseEntity<Order>(HttpStatus.NO_CONTENT);
     }
 }
