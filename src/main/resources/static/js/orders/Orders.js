@@ -146,6 +146,7 @@ function createAction(order) {
 
 function createMoreButton(order) {
     let button = document.createElement("button");
+    button.setAttribute("class", "more");
     button.setAttribute("onclick", "addDescription(" + order.id + ")");
     let p = createButtonText();
     button.appendChild(p);
