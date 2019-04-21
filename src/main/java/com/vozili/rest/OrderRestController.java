@@ -20,7 +20,7 @@ public class OrderRestController {
     private OrderService orderService;
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<List<Order>> getAllPlayers() {
+    public ResponseEntity<List<Order>> getAllOrders() {
         List<Order> result = this.orderService.getAll();
         if (result.isEmpty()) {
             return new ResponseEntity<List<Order>>(HttpStatus.NOT_FOUND);
@@ -29,7 +29,7 @@ public class OrderRestController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Order> addPlayer(@RequestBody Order order) {
+    public ResponseEntity<Order> addOrder(@RequestBody Order order) {
         return new ResponseEntity<Order>(orderService.save(order), HttpStatus.OK);
     }
 }
