@@ -2,6 +2,19 @@ var descriptions = [];
 var isOpen = [];
 var newOrders = [];
 
+function addBook(id) {
+    console.log(id);
+    let xhr = new XMLHttpRequest();
+    xhr.open("PUT", "http://localhost:8080/customer/booked/" + id,false);
+    xhr.send();
+
+    if (xhr.status == 200) {
+        let orders = JSON.parse(xhr.responseText);
+        console.log(orders);
+    }
+    window.location = "http://localhost:8080/main/personal";
+}
+
 function getOrders() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost:8080/orders",false);
@@ -139,7 +152,7 @@ function createAction(order) {
     div.setAttribute("class", "action");
     let moreButton = createMoreButton(order);
     div.appendChild(moreButton);
-    let bookmarkButton = createBookmarkButton();
+    let bookmarkButton = createBookmarkButton(order);
     div.appendChild(bookmarkButton);
     return div;
 }
@@ -153,9 +166,12 @@ function createMoreButton(order) {
     return button;
 }
 
+
+
 function createBookmarkButton(order) {
     let button = document.createElement("button");
     button.setAttribute("class", "bookmark");
+    button.setAttribute("onclick", "addBook(" + order.id + ")");
     let p = document.createElement("p");
     p.textContent = "Забронировать";
     button.appendChild(p);
