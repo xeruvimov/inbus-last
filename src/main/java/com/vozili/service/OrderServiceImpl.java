@@ -1,10 +1,10 @@
 package com.vozili.service;
 
 import com.vozili.model.Order;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.vozili.repository.OrderRepository;
 import com.vozili.serviceinterface.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -26,5 +26,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order save(Order order) {
         return repository.save(order);
+    }
+
+    @Override
+    public void delete(Long id) {
+        repository.delete(id);
     }
 }
