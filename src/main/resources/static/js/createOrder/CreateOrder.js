@@ -5,11 +5,6 @@ function sendHttpRequest() {
     console.log(json);
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.send(json);
-    if (xhr.status == 200) {
-        let response = JSON.parse(xhr.responseText);
-        console.log(response);
-    }
-    // addOrder(response);
 }
 
 function createJson() {

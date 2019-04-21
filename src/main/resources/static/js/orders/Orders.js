@@ -1,5 +1,6 @@
 var descriptions = [];
 var isOpen = [];
+var newOrders = [];
 
 function getOrders() {
     let xhr = new XMLHttpRequest();
