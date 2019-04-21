@@ -22,4 +22,14 @@ public class HtmlController {
     public String ordersCreate(Model model) {
         return "CreateOrder";
     }
+
+    @RequestMapping(value = {"/main/about"}, method = RequestMethod.GET)
+    public String aboutUs(Model model) {
+        return "AboutUs";
+    }
+
+    @RequestMapping(value = {"/main/personal"}, method = RequestMethod.GET)
+    public String personalOrders(Model model) {
+        return "Personal";
+    }
 }
