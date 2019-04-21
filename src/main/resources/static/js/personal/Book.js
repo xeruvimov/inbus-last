@@ -1,10 +1,9 @@
 var descriptions = [];
 var isOpen = [];
-var newOrders = [];
 
-function addBook(id) {
+function delBook() {
     let xhr = new XMLHttpRequest();
-    xhr.open("PUT", "http://localhost:8080/customer/booked/" + id,false);
+    xhr.open("DELETE", "http://localhost:8080/customer/booked/",false);
     xhr.send();
 
     if (xhr.status == 200) {
@@ -12,36 +11,6 @@ function addBook(id) {
         console.log(orders);
     }
     window.location = "http://localhost:8080/main/personal";
-}
-
-function getOrders() {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:8080/orders",false);
-    xhr.send();
-
-    if (xhr.status == 200) {
-        let orders = JSON.parse(xhr.responseText);
-        console.log(orders);
-        loadOrders(orders);
-    }
-}
-
-function loadOrders(orders) {
-    for (let i = 0; i < orders.length; i++) {
-        addOrder(orders[i], "orders");
-    }
-}
-
-function getPersonalOrders() {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:8080/customer/personal",false);
-    xhr.send();
-
-    if (xhr.status == 200) {
-        let order = JSON.parse(xhr.responseText);
-        console.log(order);
-        addOrder(order,"personal_order");
-    }
 }
 
 function getBookedOrders() {
@@ -52,12 +21,12 @@ function getBookedOrders() {
     if (xhr.status == 200) {
         let order = JSON.parse(xhr.responseText);
         console.log(order);
-        addOrder(order,"booked_order");
+        addOrder(order);
     }
 }
 
-function addOrder(order, elementid) {
-    let orders = document.getElementById(elementid);
+function addOrder(order) {
+    let orders = document.getElementById("booked_order");
     let newOrder = createOrder(order);
     orders.appendChild(newOrder);
     saveDescription(order);
@@ -168,9 +137,9 @@ function createMoreButton(order) {
 function createBookmarkButton(order) {
     let button = document.createElement("button");
     button.setAttribute("class", "bookmark");
-    button.setAttribute("onclick", "addBook(" + order.id + ")");
+    button.setAttribute("onclick", "delBook()");
     let p = document.createElement("p");
-    p.textContent = "Забронировать";
+    p.textContent = "Отменить";
     button.appendChild(p);
     return button;
 }
@@ -220,12 +189,3 @@ function createDescription(text) {
     div.appendChild(img);
     return div;
 }
-
-/*function clearOrders() {
-    let orders = document.getElementById("orders");
-    let order = orders.getElementsByClassName("order");
-    for (let i = 0; i < order.length; i++) {
-        orders.removeChild(order[i]);
-    }
-}*/
-

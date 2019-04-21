@@ -1,6 +1,9 @@
 package com.vozili.rest;
 
+import com.vozili.model.Customer;
 import com.vozili.model.Order;
+import com.vozili.repository.CustomerRepository;
+import com.vozili.serviceinterface.CustomerService;
 import com.vozili.serviceinterface.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +22,12 @@ import java.util.List;
 public class OrderRestController {
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private CustomerService customerService;
+
+    @Autowired
+    private CustomerRepository customerRepository;
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List<Order>> getAllOrders() {
@@ -40,6 +49,9 @@ public class OrderRestController {
         if (order == null) {
             return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
         }
+        Customer customer = customerService.getCustomer();
+        customer.setPersonalOrder(null);
+        customerRepository.save(customer);
         orderService.delete(id);
         return new ResponseEntity<Order>(HttpStatus.NO_CONTENT);
     }

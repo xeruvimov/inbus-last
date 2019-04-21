@@ -16,8 +16,8 @@ public class Customer {
     @JoinColumn(name = "booked_order", referencedColumnName = "id")
     private Order bookedOrder;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "personal_order")
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "personal_order", referencedColumnName = "id")
     private Order personalOrder;
 
     public Long getId() {

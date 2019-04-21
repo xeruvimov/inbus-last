@@ -1,35 +1,11 @@
 var descriptions = [];
 var isOpen = [];
-var newOrders = [];
 
-function addBook(id) {
+function delOrder(id) {
     let xhr = new XMLHttpRequest();
-    xhr.open("PUT", "http://localhost:8080/customer/booked/" + id,false);
+    xhr.open("DELETE", "http://localhost:8080/orders/" + id,false);
     xhr.send();
-
-    if (xhr.status == 200) {
-        let orders = JSON.parse(xhr.responseText);
-        console.log(orders);
-    }
     window.location = "http://localhost:8080/main/personal";
-}
-
-function getOrders() {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:8080/orders",false);
-    xhr.send();
-
-    if (xhr.status == 200) {
-        let orders = JSON.parse(xhr.responseText);
-        console.log(orders);
-        loadOrders(orders);
-    }
-}
-
-function loadOrders(orders) {
-    for (let i = 0; i < orders.length; i++) {
-        addOrder(orders[i], "orders");
-    }
 }
 
 function getPersonalOrders() {
@@ -40,92 +16,81 @@ function getPersonalOrders() {
     if (xhr.status == 200) {
         let order = JSON.parse(xhr.responseText);
         console.log(order);
-        addOrder(order,"personal_order");
+        addPersonalOrder(order);
     }
 }
 
-function getBookedOrders() {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:8080/customer/booked",false);
-    xhr.send();
 
-    if (xhr.status == 200) {
-        let order = JSON.parse(xhr.responseText);
-        console.log(order);
-        addOrder(order,"booked_order");
-    }
-}
-
-function addOrder(order, elementid) {
-    let orders = document.getElementById(elementid);
-    let newOrder = createOrder(order);
+function addPersonalOrder(order) {
+    let orders = document.getElementById("personal_order");
+    let newOrder = createPersonalOrder(order);
     orders.appendChild(newOrder);
-    saveDescription(order);
+    savePersonalDescription(order);
 }
 
-function createOrder(order) {
+function createPersonalOrder(order) {
     let div = document.createElement("article");
     div.setAttribute("id", order.id);
     div.setAttribute("class", "order");
-    let header = createHeader(order);
+    let header = createPersonalHeader(order);
     div.appendChild(header);
     return div;
 }
 
-function createHeader(order) {
+function createPersonalHeader(order) {
     let div = document.createElement("header");
-    let information = createInformation(order);
+    let information = createPersonalInformation(order);
     div.appendChild(information);
-    let action = createAction(order);
+    let action = createPersonalAction(order);
     div.appendChild(action);
     // let button = createButton(order);
     // div.appendChild(button);
     return div;
 }
 
-function createInformation(order) {
+function createPersonalInformation(order) {
     let div = document.createElement("div");
     div.setAttribute("class", "information");
-    let routePrice = createRoutePrice(order);
+    let routePrice = createPersonalRoutePrice(order);
     div.appendChild(routePrice);
-    let timeAndCarNumber = createTimeAndCarNumber(order);
+    let timeAndCarNumber = createPersonalTimeAndCarNumber(order);
     div.appendChild(timeAndCarNumber);
     return div;
 }
 
-function createRoutePrice(order) {
+function createPersonalRoutePrice(order) {
     let div = document.createElement("div");
     div.setAttribute("class", "route_price");
-    let numberRoute = createNumberRoute(order);
+    let numberRoute = createPersonalNumberRoute(order);
     div.appendChild(numberRoute);
-    let price = createPrice(order);
+    let price = createPersonalPrice(order);
     div.appendChild(price);
     return div;
 }
 
-function createNumberRoute(order) {
+function createPersonalNumberRoute(order) {
     let numberRoute = document.createElement("h4");
     numberRoute.textContent = order.numberRoute + " автобус";
     return numberRoute;
 }
 
-function createPrice(order) {
+function createPersonalPrice(order) {
     let price = document.createElement("h4");
     price.textContent = order.price + " рублей";
     return price;
 }
 
-function createTimeAndCarNumber(order) {
+function createPersonalTimeAndCarNumber(order) {
     let div = document.createElement("div");
     div.setAttribute("class", "time&car_number");
-    let time = createTime(order);
+    let time = createPersonalTime(order);
     div.appendChild(time);
-    let carNumber = createCarNumber(order);
+    let carNumber = createPersonalCarNumber(order);
     div.appendChild(carNumber);
     return div;
 }
 
-function createTime(order) {
+function createPersonalTime(order) {
     let div = document.createElement("div");
     div.setAttribute("class", "time");
     let img = document.createElement("img");
@@ -137,7 +102,7 @@ function createTime(order) {
     return div;
 }
 
-function createCarNumber(order) {
+function createPersonalCarNumber(order) {
     let div = document.createElement("div");
     div.setAttribute("class", "car_number");
     let p = document.createElement("p");
@@ -146,46 +111,46 @@ function createCarNumber(order) {
     return div;
 }
 
-function createAction(order) {
+function createPersonalAction(order) {
     let div = document.createElement("div");
     div.setAttribute("class", "action");
-    let moreButton = createMoreButton(order);
+    let moreButton = createPersonalMoreButton(order);
     div.appendChild(moreButton);
-    let bookmarkButton = createBookmarkButton(order);
+    let bookmarkButton = createDeleteButton(order);
     div.appendChild(bookmarkButton);
     return div;
 }
 
-function createMoreButton(order) {
+function createPersonalMoreButton(order) {
     let button = document.createElement("button");
     button.setAttribute("class", "more");
-    button.setAttribute("onclick", "addDescription(" + order.id + ")");
-    let p = createButtonText();
+    button.setAttribute("onclick", "addPersonalDescription(" + order.id + ")");
+    let p = createPersonalButtonText();
     button.appendChild(p);
     return button;
 }
 
-function createBookmarkButton(order) {
+function createDeleteButton(order) {
     let button = document.createElement("button");
     button.setAttribute("class", "bookmark");
-    button.setAttribute("onclick", "addBook(" + order.id + ")");
+    button.setAttribute("onclick", "delOrder(" + order.id + ")");
     let p = document.createElement("p");
-    p.textContent = "Забронировать";
+    p.textContent = "Удалить";
     button.appendChild(p);
     return button;
 }
 
-function createButtonText() {
+function createPersonalButtonText() {
     let p = document.createElement("p");
     p.textContent = "Подробнее";
     return p;
 }
 
-function saveDescription(order) {
+function savePersonalDescription(order) {
     descriptions[order.id] = order.description;
 }
 
-function addDescription(id) {
+function addPersonalDescription(id) {
     console.log(id);
     console.log(descriptions[id]);
     if (isOpen[id]) {
@@ -196,13 +161,13 @@ function addDescription(id) {
         isOpen[id] = false;
     } else {
         let order = document.getElementById(id);
-        let description = createDescription(descriptions[id]);
+        let description = createPersonalDescription(descriptions[id]);
         order.appendChild(description);
         isOpen[id] = true;
     }
 }
 
-function createDescription(text) {
+function createPersonalDescription(text) {
     let div = document.createElement("div");
     div.setAttribute("class", "description");
     let h4 = document.createElement("h4");
@@ -220,12 +185,3 @@ function createDescription(text) {
     div.appendChild(img);
     return div;
 }
-
-/*function clearOrders() {
-    let orders = document.getElementById("orders");
-    let order = orders.getElementsByClassName("order");
-    for (let i = 0; i < order.length; i++) {
-        orders.removeChild(order[i]);
-    }
-}*/
-
