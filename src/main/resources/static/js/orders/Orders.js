@@ -12,7 +12,6 @@ function getOrders() {
 }
 
 function loadOrders(orders) {
-    // clearOrders();
     for (let i = 0; i < orders.length; i++) {
         addOrder(orders[i]);
     }
@@ -20,27 +19,46 @@ function loadOrders(orders) {
 
 function addOrder(order) {
     let orders = document.getElementById("orders");
-    let article = createArticle(order);
-    orders.appendChild(article);
-    let header = createHeader();
-    article.appendChild(header);
-    let numberRoute = createNumberRoute(order);
-    header.appendChild(numberRoute);
-    let price = createPrice(order);
-    header.appendChild(price);
-    let button = createButton(order);
-    header.appendChild(button);
+    let newOrder = createOrder(order);
+    orders.appendChild(newOrder);
 }
 
-function createArticle(order) {
+function createOrder(order) {
     let article = document.createElement("article");
     article.setAttribute("id", order.id);
     article.setAttribute("class", "order");
+    let header = createHeader(order);
+    article.appendChild(header);
     return article;
 }
 
-function createHeader() {
-    return document.createElement("header");
+function createHeader(order) {
+    let div = document.createElement("header");
+    let information = createInformation(order);
+    div.appendChild(information);
+    let button = createButton();
+    div.appendChild(button);
+    return div;
+}
+
+function createInformation(order) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "information");
+    let routePrice = createRoutePrice(order);
+    div.appendChild(routePrice);
+    let timeAndCarNumber = createTimeAndCarNumber(order);
+    div.appendChild(timeAndCarNumber);
+    return div;
+}
+
+function createRoutePrice(order) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "route_price");
+    let numberRoute = createNumberRoute(order);
+    div.appendChild(numberRoute);
+    let price = createPrice(order);
+    div.appendChild(price);
+    return div;
 }
 
 function createNumberRoute(order) {
@@ -53,6 +71,37 @@ function createPrice(order) {
     let price = document.createElement("h4");
     price.textContent = order.price;
     return price;
+}
+
+function createTimeAndCarNumber(order) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "time&car_number");
+    let time = createTime(order);
+    div.appendChild(time);
+    let carNumber = createCarNumber(order);
+    div.appendChild(carNumber);
+    return div;
+}
+
+function createTime(order) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "time");
+    let img = document.createElement("img");
+    img.setAttribute("src", "img/time.png");
+    div.appendChild(img);
+    let p = document.createElement("p");
+    p.textContent = "5 минут назад";
+    div.appendChild(p);
+    return div;
+}
+
+function createCarNumber(order) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "car_number");
+    let p = document.createElement("p");
+    p.textContent = order.numberAuto;
+    div.appendChild(p);
+    return div;
 }
 
 function createButton(order) {
