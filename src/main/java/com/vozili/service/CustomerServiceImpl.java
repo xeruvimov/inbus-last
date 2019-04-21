@@ -14,16 +14,16 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getCustomer() {
-        return customerRepository.getOne(1L);
+        return customerRepository.findOne(1L);
     }
 
     @Override
     public Order getBookedOrder() {
-        return customerRepository.getOne(1L).getBookedOrder();
+        return customerRepository.findOne(1L).getBookedOrder();
     }
 
     @Override
     public Order getPersonalOrder() {
-        return customerRepository.getOne(1L).getPersonalOrder();
+        return customerRepository.findOne(1L).getPersonalOrder();
     }
 }
