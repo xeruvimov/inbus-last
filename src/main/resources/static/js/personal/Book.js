@@ -98,7 +98,7 @@ function createTime(order) {
     let div = document.createElement("div");
     div.setAttribute("class", "time");
     let img = document.createElement("img");
-    img.setAttribute("src", "img/time.png");
+    img.setAttribute("src", "/img/time.png");
     div.appendChild(img);
     let p = document.createElement("p");
     p.textContent = "5 минут назад";

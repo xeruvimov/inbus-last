@@ -1,10 +1,12 @@
 function sendHttpRequest() {
     let json = createJson();
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:8080/orders");
+    xhr.open("POST", "http://localhost:8080/orders",false);
     console.log(json);
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.send(json);
+    console.log("sosisuka");
+    window.location = "http://localhost:8080/main/personal";
 }
 
 function createJson() {
