@@ -60,17 +60,31 @@
     font-size: 12px;
 }
 
+.order header .action {
+    margin-right: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+}
 
-.order header button {
+.order header .action .more {
     border: 0;
     height: 25px;
     width: 95px;
     border-radius: 5px;
     background-color: #dad8c1;
-    margin-right: 25px;
 }
 
-.order header button p {
+.order header .action .bookmark {
+    border: 0;
+    height: 25px;
+    width: 125px;
+    border-radius: 5px;
+    background-color: #dad8c1;
+}
+
+.order header .action .more p, .order header .action .bookmark p {
     font-family: Roboto, sans-serif;
     margin: 0;
     font-weight: bold;
