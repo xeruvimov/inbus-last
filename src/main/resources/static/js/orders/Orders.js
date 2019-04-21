@@ -1,5 +1,5 @@
 var descriptions = [];
-var isOpen = [false, false, false, false];
+var isOpen = [];
 
 function getOrders() {
     let xhr = new XMLHttpRequest();
