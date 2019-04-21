@@ -13,11 +13,13 @@ public class Customer {
     @Column(name = "login")
     private String login;
 
-    @Column(name = "booked_order")
-    private Integer bookedOrder;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "booked_order", referencedColumnName = "id")
+    private Order bookedOrder;
 
-    @Column(name = "personal_order")
-    private Integer personalOrder;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "personal_order")
+    private Order personalOrder;
 
     public Long getId() {
         return id;
@@ -35,19 +37,19 @@ public class Customer {
         this.login = login;
     }
 
-    public Integer getBookedOrder() {
+    public Order getBookedOrder() {
         return bookedOrder;
     }
 
-    public void setBookedOrder(Integer bookedOrder) {
+    public void setBookedOrder(Order bookedOrder) {
         this.bookedOrder = bookedOrder;
     }
 
-    public Integer getPersonalOrder() {
+    public Order getPersonalOrder() {
         return personalOrder;
     }
 
-    public void setPersonalOrder(Integer personalOrder) {
+    public void setPersonalOrder(Order personalOrder) {
         this.personalOrder = personalOrder;
     }
 }
