@@ -72,4 +72,16 @@ public class Order {
     public void setNumberAuto(String numberAuto) {
         this.numberAuto = numberAuto;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", numberRoute='" + numberRoute + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", date=" + date +
+                ", numberAuto='" + numberAuto + '\'' +
+                '}';
+    }
 }
