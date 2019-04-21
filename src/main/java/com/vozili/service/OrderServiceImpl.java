@@ -1,6 +1,8 @@
 package com.vozili.service;
 
+import com.vozili.model.Customer;
 import com.vozili.model.Order;
+import com.vozili.repository.CustomerRepository;
 import com.vozili.repository.OrderRepository;
 import com.vozili.serviceinterface.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,8 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderRepository repository;
 
+    @Autowired
+    private CustomerRepository customerRepository;
     @Override
     public Order getById(Long id) {
         return repository.getOne(id);
@@ -25,7 +29,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order save(Order order) {
-        return repository.save(order);
+        Order result = repository.save(order);
+        Customer tmp = customerRepository.findOne(1L);
+        tmp.setPersonalOrder(result);
+        customerRepository.save(tmp);
+        return result;
     }
 
     @Override
