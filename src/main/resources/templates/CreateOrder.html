@@ -33,22 +33,26 @@
         <h3>Создание заказа</h3>
     </header>
     <section class="information">
-        <article>
-            <p>Город:</p>
-            <input id="city" type="text">
-        </article>
-        <article>
-            <p>Тип транспорта:</p>
-            <select id="type_auto">
-                <option></option>
-                <option>Автобус</option>
-                <option>Троллейбус</option>
-                <option>Трамвай</option>
-            </select>
-        </article>
+<!--        <article>-->
+<!--            <p>Город:</p>-->
+<!--            <input id="city" type="text">-->
+<!--        </article>-->
+<!--        <article>-->
+<!--            <p>Тип транспорта:</p>-->
+<!--            <select id="type_auto">-->
+<!--                <option></option>-->
+<!--                <option>Автобус</option>-->
+<!--                <option>Троллейбус</option>-->
+<!--                <option>Трамвай</option>-->
+<!--            </select>-->
+<!--        </article>-->
         <article>
             <p>Номер маршрута:</p>
             <input id="number_route" type="text">
+        </article>
+        <article>
+            <p>Номер автобуса:</p>
+            <input id="number_bus" type="text">
         </article>
         <article>
             <p>Стоимость:</p>
@@ -62,7 +66,7 @@
     </section>
 
     <footer>
-        <button onclick="createOrder()">
+        <button onclick="sendHttpRequest()">
             <p>Отправить</p>
         </button>
     </footer>

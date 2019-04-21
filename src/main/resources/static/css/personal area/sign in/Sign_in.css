@@ -2,11 +2,13 @@ body {
     display: flex;
     justify-content: center;
     background-color: #eae8db;
+    align-items: center;
+    height: 500px;
 }
 
 main {
     margin-left: 20px;
-    width: 1000px;
+    width: 500px;
     background-color: #dad8c1;
     border-radius: 0 0 5px 5px;
 }
@@ -27,23 +29,23 @@ main header h3 {
 }
 
 main section {
+    text-align: center;
     margin-left: 15px;
 }
 
 main article p{
     font-family: Roboto, sans-serif;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .login input, .password input {
     border-radius: 5px;
     border: 0;
     height: 20px;
-    width: 120px;
+    width: 200px;
 }
 
 .password input {
-    float: left;
 }
 
 .password button {
@@ -63,6 +65,7 @@ main article p{
 
 .action {
     margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .action button {
