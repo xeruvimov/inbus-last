@@ -1,7 +1,7 @@
 package com.vozili.model;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.sql.Time;
 
 @Entity
 @Table(name = "contract")
@@ -20,16 +20,16 @@ public class Order {
     private Integer price;
 
     @Column(name = "date")
-    private Date date;
+    private Time date;
 
     @Column(name = "number_auto")
     private String numberAuto;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -57,11 +57,11 @@ public class Order {
         this.price = price;
     }
 
-    public Date getDate() {
+    public Time getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Time date) {
         this.date = date;
     }
 
