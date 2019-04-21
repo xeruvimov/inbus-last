@@ -1,7 +1,3 @@
-function createOrder() {
-    sendHttpRequest();
-}
-
 function sendHttpRequest() {
     let json = createJson();
     let xhr = new XMLHttpRequest();
@@ -14,7 +10,10 @@ function sendHttpRequest() {
 function createJson() {
     let json = {};
     json.numberRoute = document.getElementById("number_route").value;
-    json.price = document.getElementById("price").value;
     json.description = document.getElementById("description").value;
-    return json.stringify();
+    json.price = document.getElementById("price").value;
+    let date = new Date.now();
+    json.date = date.hour + ":" + date.minute + ":" + date.second;
+    json.numberAuto = document.getElementById("number_auto").value;
+    return JSON.stringify(json);
 }
