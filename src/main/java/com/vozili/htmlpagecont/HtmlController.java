@@ -12,4 +12,14 @@ public class HtmlController {
     public String hello(Model model) {
         return "Sign_in";
     }
+
+    @RequestMapping(value = {"/main"}, method = RequestMethod.GET)
+    public String orders(Model model) {
+        return "Orders";
+    }
+
+    @RequestMapping(value = {"/main/create"}, method = RequestMethod.GET)
+    public String ordersCreate(Model model) {
+        return "CreateOrder";
+    }
 }
