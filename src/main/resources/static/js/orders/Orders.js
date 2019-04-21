@@ -109,7 +109,7 @@ function createCarNumber(order) {
 
 function createButton(order) {
     let button = document.createElement("button");
-    button.setAttribute("onclick", "addDiscription(" + order.id + ")");
+    button.setAttribute("onclick", "addDescription(" + order.id + ")");
     let p = createButtonText();
     button.appendChild(p);
     return button;
@@ -153,7 +153,7 @@ function createDescription(text) {
     p.textContent = text;
     div.appendChild(p);
     let img = document.createElement("img");
-    img.setAttribute("src", "../static/img/gps_label.png");
+    img.setAttribute("src", "/img/gps_label.png");
     img.style.height = "200px";
     img.style.width = "900px";
     img.style.margin = "25px 50px 25px 50px";
