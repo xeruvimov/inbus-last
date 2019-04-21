@@ -64,8 +64,10 @@ function createHeader(order) {
     let div = document.createElement("header");
     let information = createInformation(order);
     div.appendChild(information);
-    let button = createButton(order);
-    div.appendChild(button);
+    let action = createAction(order);
+    div.appendChild(action);
+    // let button = createButton(order);
+    // div.appendChild(button);
     return div;
 }
 
@@ -132,10 +134,29 @@ function createCarNumber(order) {
     return div;
 }
 
-function createButton(order) {
+function createAction(order) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "action");
+    let moreButton = createMoreButton(order);
+    div.appendChild(moreButton);
+    let bookmarkButton = createBookmarkButton();
+    div.appendChild(bookmarkButton);
+    return div;
+}
+
+function createMoreButton(order) {
     let button = document.createElement("button");
     button.setAttribute("onclick", "addDescription(" + order.id + ")");
     let p = createButtonText();
+    button.appendChild(p);
+    return button;
+}
+
+function createBookmarkButton(order) {
+    let button = document.createElement("button");
+    button.setAttribute("class", "bookmark");
+    let p = document.createElement("p");
+    p.textContent = "Забронировать";
     button.appendChild(p);
     return button;
 }
