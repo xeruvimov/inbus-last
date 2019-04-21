@@ -47,7 +47,7 @@ header h3 {
 
 .description textarea {
     width: 900px;
-    min-height: 300px;
+    min-height: 100px;
     margin: 5px 50px 50px 50px;
 }
 
