@@ -16,12 +16,36 @@ function getOrders() {
 
 function loadOrders(orders) {
     for (let i = 0; i < orders.length; i++) {
-        addOrder(orders[i]);
+        addOrder(orders[i], "orders");
     }
 }
 
-function addOrder(order) {
-    let orders = document.getElementById("orders");
+function getPersonalOrders() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:8080/customer/personal",false);
+    xhr.send();
+
+    if (xhr.status == 200) {
+        let order = JSON.parse(xhr.responseText);
+        console.log(order);
+        addOrder(order,"personal_order");
+    }
+}
+
+function getBookedOrders() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:8080/customer/booked",false);
+    xhr.send();
+
+    if (xhr.status == 200) {
+        let order = JSON.parse(xhr.responseText);
+        console.log(order);
+        addOrder(order,"booked_order");
+    }
+}
+
+function addOrder(order, elementid) {
+    let orders = document.getElementById(elementid);
     let newOrder = createOrder(order);
     orders.appendChild(newOrder);
     saveDescription(order);

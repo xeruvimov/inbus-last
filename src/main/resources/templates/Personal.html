@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="../static/css/navigation/Navigation.css" rel="stylesheet">
-    <link href="../static/css/personal%20area/personal/Personal.css" rel="stylesheet">
+    <link href="/css/navigation/Navigation.css" rel="stylesheet">
+    <link href="/css/personal%20area/personal/Personal.css" rel="stylesheet">
+    <script src="/js/orders/Orders.js"></script>
 </head>
-<body>
+<body onload="getPersonalOrders(); getBookedOrders()">
 <nav>
     <button onclick="location.href='/main'">
         <p>Предложения</p>
@@ -28,7 +29,10 @@
     <header>
         <h3>Мои предложения</h3>
     </header>
-    <section id="orders">
+    <section id="booked_order">
+
+    </section>
+    <section id="personal_order">
 
     </section>
 </main>
