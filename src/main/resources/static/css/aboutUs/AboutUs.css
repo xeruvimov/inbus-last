@@ -37,3 +37,8 @@ main p {
     font-size: 15px;
     margin: 15px;
 }
+
+main footer p {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+}
