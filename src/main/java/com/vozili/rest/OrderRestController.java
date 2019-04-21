@@ -35,7 +35,7 @@ public class OrderRestController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Order> addOrder(@PathVariable Long id) {
+    public ResponseEntity<Order> deleteOrder(@PathVariable Long id) {
         Order order = orderService.getById(id);
         if (order == null) {
             return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);

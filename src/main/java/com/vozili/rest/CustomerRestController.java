@@ -27,7 +27,7 @@ public class CustomerRestController {
     private CustomerRepository customerRepository;
 
     @RequestMapping(value = "/booked", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Order> getAllBookedOrder() {
+    public ResponseEntity<Order> getBookedOrder() {
         Order result = customerService.getBookedOrder();
         if (result == null) {
             return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
@@ -36,7 +36,7 @@ public class CustomerRestController {
     }
 
     @RequestMapping(value = "/personal", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Order> getAllPersonalOrder() {
+    public ResponseEntity<Order> getPersonalOrder() {
         Order result = customerService.getPersonalOrder();
         if (result == null) {
             return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
@@ -54,7 +54,7 @@ public class CustomerRestController {
     }
 
     @RequestMapping(value = "/booked/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Customer> getAllBookedOrder(@PathVariable Long id) {
+    public ResponseEntity<Customer> setBookedOrder(@PathVariable Long id) {
         Customer result = customerService.getCustomer();
         Order order = orderService.getById(id);
         result.setBookedOrder(order);
