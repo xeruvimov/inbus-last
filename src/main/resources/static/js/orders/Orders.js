@@ -126,6 +126,8 @@ function saveDescription(order) {
 }
 
 function addDescription(id) {
+    console.log(id);
+    console.log(descriptions[id]);
     if (isOpen[id]) {
         let order = document.getElementById(id);
         let div = order.getElementsByClassName("description").item(0);
