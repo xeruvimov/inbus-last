@@ -1,3 +1,5 @@
+var descriptions = [];
+var isOpen = [false, false, false, false];
 
 function getOrders() {
     let xhr = new XMLHttpRequest();
@@ -21,22 +23,23 @@ function addOrder(order) {
     let orders = document.getElementById("orders");
     let newOrder = createOrder(order);
     orders.appendChild(newOrder);
+    saveDescription(order);
 }
 
 function createOrder(order) {
-    let article = document.createElement("article");
-    article.setAttribute("id", order.id);
-    article.setAttribute("class", "order");
+    let div = document.createElement("article");
+    div.setAttribute("id", order.id);
+    div.setAttribute("class", "order");
     let header = createHeader(order);
-    article.appendChild(header);
-    return article;
+    div.appendChild(header);
+    return div;
 }
 
 function createHeader(order) {
     let div = document.createElement("header");
     let information = createInformation(order);
     div.appendChild(information);
-    let button = createButton();
+    let button = createButton(order);
     div.appendChild(button);
     return div;
 }
@@ -63,13 +66,13 @@ function createRoutePrice(order) {
 
 function createNumberRoute(order) {
     let numberRoute = document.createElement("h4");
-    numberRoute.textContent = order.numberRoute;
+    numberRoute.textContent = order.numberRoute + " автобус";
     return numberRoute;
 }
 
 function createPrice(order) {
     let price = document.createElement("h4");
-    price.textContent = order.price;
+    price.textContent = order.price + " рублей";
     return price;
 }
 
@@ -116,6 +119,44 @@ function createButtonText() {
     let p = document.createElement("p");
     p.textContent = "Подробнее";
     return p;
+}
+
+function saveDescription(order) {
+    descriptions[order.id] = order.description;
+}
+
+function addDescription(id) {
+    if (isOpen[id]) {
+        let order = document.getElementById(id);
+        let div = order.getElementsByClassName("description").item(0);
+        console.log(div);
+        order.removeChild(div);
+        isOpen[id] = false;
+    } else {
+        let order = document.getElementById(id);
+        let description = createDescription(descriptions[id]);
+        order.appendChild(description);
+        isOpen[id] = true;
+    }
+}
+
+function createDescription(text) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "description");
+    let h4 = document.createElement("h4");
+    h4.setAttribute("align", "center");
+    h4.textContent = "Описание";
+    div.appendChild(h4);
+    p = document.createElement("p");
+    p.textContent = text;
+    div.appendChild(p);
+    let img = document.createElement("img");
+    img.setAttribute("src", "../static/img/gps_label.png");
+    img.style.height = "200px";
+    img.style.width = "900px";
+    img.style.margin = "25px 50px 25px 50px";
+    div.appendChild(img);
+    return div;
 }
 
 /*function clearOrders() {
