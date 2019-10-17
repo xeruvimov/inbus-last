@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import OrderDescription from "../orderdescription/OrderDescription";
+import OrderInformation from "../information/OrderInformation"
 import './Order.css'
 import './accordion.css'
 
@@ -23,23 +24,15 @@ class Order extends Component {
         return (
             <article id={this.props.order.id} className="order">
                 <header>
-                    <div className="information">
-                        <div className="route_price">
-                            <h4>{this.props.order.numberRoute}</h4>
-                            <h4>{this.props.order.price} рублей</h4>
-                        </div>
-                        <div className="time&car_number">
-                            <div className="time">
-                                <img src="./time.png" alt="time"/>
-                                <p>5 минут назад</p></div>
-                            <div className="car_number">
-                                <p>{this.props.order.numberAuto}</p>
-                            </div>
-                        </div>
-                    </div>
+                    <OrderInformation numberRoute={this.props.order.numberRoute} price={this.props.order.price}
+                                      numberAuto={this.props.order.numberAuto}/>
                     <div className="action">
-                        <button className="more" onClick={this.showDropdown}><p>Подробнее</p></button>
-                        <button className="bookmark"><p>Забронировать</p></button>
+                        <button className="more" onClick={this.showDropdown}>
+                            <p className="button-text">Подробнее</p>
+                        </button>
+                        <button className="bookmark">
+                            <p className="button-text">Забронировать</p>
+                        </button>
                     </div>
                 </header>
                 <div className={this.state.isVisibleDescription ? "dropdown-item-active" : "dropdown-item-inactive"}>
