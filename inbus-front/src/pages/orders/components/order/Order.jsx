@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import OrderDescription from "../orderdescription/OrderDescription";
 import './Order.css'
 import './accordion.css'
 
@@ -7,14 +8,14 @@ class Order extends Component {
         super(props);
 
         this.state = {
-            isVisible: false
+            isVisibleDescription: false
         };
         this.showDropdown = this.showDropdown.bind(this);
     }
 
     showDropdown() {
         this.setState({
-            isVisible: !this.state.isVisible
+            isVisibleDescription: !this.state.isVisibleDescription
         })
     }
 
@@ -41,12 +42,8 @@ class Order extends Component {
                         <button className="bookmark"><p>Забронировать</p></button>
                     </div>
                 </header>
-                <div className={this.state.isVisible ? "dropdown-item-active" : "dropdown-item-inactive"}>
-                    <div className="description">
-                        <h4 align="center">Описание</h4>
-                        <p>{this.props.order.description}</p>
-                        <img src="./gps_label.png" alt="MAP"/>
-                    </div>
+                <div className={this.state.isVisibleDescription ? "dropdown-item-active" : "dropdown-item-inactive"}>
+                    <OrderDescription description={this.props.order.description}/>
                 </div>
             </article>
         );

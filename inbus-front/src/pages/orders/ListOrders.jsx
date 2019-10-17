@@ -1,6 +1,6 @@
 import React, {Component} from "react"
-import SearchHeader from "./SearchHeader";
-import Order from './Order'
+import SearchHeader from "./components/searchheader/SearchHeader";
+import Order from './components/order/Order'
 import './Orders.css'
 
 class ListOrders extends Component {

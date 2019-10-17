@@ -1,14 +1,17 @@
 .order {
     margin-top: 15px;
     width: 1000px;
+    background-color: #aea3a1;
+    border-radius: 5px;
 }
 
 .order header {
+    border-radius: inherit;
     background-color: #aea3a1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
+    height: 80px;
 }
 
 .order header .info {
@@ -89,25 +92,6 @@
     margin: 0;
     font-weight: bold;
     font-size: 15px;
-}
-
-.order .description {
-    text-align: center;
-    background-color: #dad8c1;
-    border-radius: 0 0 5px 5px;
-}
-
-.order .description h4 {
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    padding-top: 25px;
-    margin: 0 0 10px 0;
-}
-
-.order .description p {
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    padding: 10px;
 }
 
 .order map img {
