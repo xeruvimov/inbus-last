@@ -1,0 +1,10 @@
+body {
+  background-color: #eae8db;
+  display: flex;
+  justify-content: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

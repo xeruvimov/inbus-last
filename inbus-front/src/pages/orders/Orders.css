@@ -1,0 +1,19 @@
+body {
+    background-color: #eae8db;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    margin-left: 20px;
+    width: 1000px;
+}
+
+#orders {
+    padding: 20px 0 20px 0;
+}
+
+main footer {
+    height: 50px;
+}
+
