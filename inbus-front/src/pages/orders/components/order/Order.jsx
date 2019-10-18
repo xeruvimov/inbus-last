@@ -43,19 +43,21 @@ class Order extends Component {
 
         let actionButton;
 
-        if (this.props.type === "none") {
-            actionButton = <BookingOrderButton key={this.props.id} id={this.props.id}/>
-        } else if (this.props.type === "booked") {
-            actionButton = <DeclineBookedOrderButton key={this.props.id}/>
-        } else if (this.props.type === "personal") {
-            actionButton = <DeletePersonalOrderButton key={this.props.id} id={this.props.id}/>
+        let {type, id, numberRoute, numberAuto, price, description} = this.props;
+
+        if (type === "none") {
+            actionButton = <BookingOrderButton key={id} id={id}/>
+        } else if (type === "booked") {
+            actionButton = <DeclineBookedOrderButton key={id}/>
+        } else if (type === "personal") {
+            actionButton = <DeletePersonalOrderButton key={id} id={id}/>
         }
 
         return (
             <article id={this.props.id} className="order">
                 <header>
-                    <OrderInformation numberRoute={this.props.numberRoute} price={this.props.price}
-                                      numberAuto={this.props.numberAuto}/>
+                    <OrderInformation numberRoute={numberRoute} price={price}
+                                      numberAuto={numberAuto}/>
                     <div className="action">
                         <button className="button" onClick={this.showDropdown}>
                             <p className="button-text">Подробнее</p>
@@ -64,7 +66,7 @@ class Order extends Component {
                     </div>
                 </header>
                 <div className={this.state.isVisibleDescription ? "dropdown-item-active" : "dropdown-item-inactive"}>
-                    <OrderDescription description={this.props.description}/>
+                    <OrderDescription description={description}/>
                 </div>
             </article>
         );
