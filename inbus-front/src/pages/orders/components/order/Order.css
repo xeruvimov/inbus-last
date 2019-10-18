@@ -8,9 +8,7 @@
 .order header {
     border-radius: inherit;
     background-color: #aea3a1;
-    /*display: flex;*/
     justify-content: space-between;
-    /*align-items: center;*/
     height: 80px;
 }
 
@@ -18,33 +16,16 @@
     margin-right: 25px;
     display: flex;
     justify-content: space-between;
-    /*align-items: center;*/
     width: 300px;
 }
 
 .button {
-    border: 0;
-    height: 25px;
-    width: 140px;
-    border-radius: 5px;
-    background-color: #dad8c1;
-}
-
-.order header .action .more {
-    border: 0;
-    height: 25px;
-    width: 140px;
-    border-radius: 5px;
-    background-color: #dad8c1;
-}
-
-.order header .action .bookmark {
-    border: 0;
-    height: 25px;
-    width: 140px;
-    border-radius: 5px;
-    background-color: #dad8c1;
-}
+     border: 0;
+     height: 25px;
+     width: 140px;
+     border-radius: 5px;
+     background-color: #dad8c1;
+ }
 
 .button-text {
     font-family: Roboto, sans-serif;

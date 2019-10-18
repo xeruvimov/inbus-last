@@ -1,7 +1,6 @@
 import React, {Component} from "react"
 import Order from "../orders/components/order/Order";
-
-// import './Personal.css'
+import './Personal.css'
 
 class Personal extends Component {
     constructor(props) {
@@ -46,13 +45,13 @@ class Personal extends Component {
                 <section id="booked_order">
                     <h4 align="center">Забронированные заказы</h4>
                     {this.state.bookedOrder &&
-                    <Order key={this.state.bookedOrder.id} order={this.state.bookedOrder} type="booked"/>}
+                    <Order key={this.state.bookedOrder.id} {...this.state.bookedOrder} type="booked"/>}
                 </section>
 
                 <section id="personal_order">
                     <h4 align="center">Мои заказы</h4>
                     {this.state.personalOrder &&
-                    <Order key={this.state.personalOrder.id} order={this.state.personalOrder} type="personal"/>}
+                    <Order key={this.state.personalOrder.id} {...this.state.personalOrder} type="personal"/>}
                 </section>
             </main>
         )

@@ -26,7 +26,7 @@ class ListOrders extends Component {
                 <SearchHeader/>
                 <div>
                     {this.state.orders.map(order => {
-                        return <Order key={order.id} order={order} type="none"/>
+                        return <Order key={order.id} {...order} type="none"/>
                     })}
                 </div>
             </main>
