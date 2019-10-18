@@ -19,13 +19,21 @@
     display: flex;
     justify-content: space-between;
     /*align-items: center;*/
-    width: 270px;
+    width: 300px;
+}
+
+.button {
+    border: 0;
+    height: 25px;
+    width: 140px;
+    border-radius: 5px;
+    background-color: #dad8c1;
 }
 
 .order header .action .more {
     border: 0;
     height: 25px;
-    width: 110px;
+    width: 140px;
     border-radius: 5px;
     background-color: #dad8c1;
 }

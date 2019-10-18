@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import SearchHeader from "./components/searchheader/SearchHeader";
 import Order from './components/order/Order'
-import './Orders.css'
+import './ListOrders.css'
 
 class ListOrders extends Component {
     constructor(props) {
@@ -26,7 +26,7 @@ class ListOrders extends Component {
                 <SearchHeader/>
                 <div>
                     {this.state.orders.map(order => {
-                        return <Order key={order.id} order={order}/>
+                        return <Order key={order.id} order={order} type="none"/>
                     })}
                 </div>
             </main>

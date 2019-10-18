@@ -6,7 +6,7 @@ class OrderInformation extends Component {
         return(
             <div className="information">
                 <div className="route-price">
-                    <h4 className="common-text">{this.props.numberRoute}</h4>
+                    <h4 className="common-text">{this.props.numberRoute} автобус</h4>
                     <h4 className="common-text">{this.props.price} рублей</h4>
                 </div>
                 <div className="time-and-car-number">
