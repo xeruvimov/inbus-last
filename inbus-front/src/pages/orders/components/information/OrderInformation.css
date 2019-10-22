@@ -1,0 +1,44 @@
+.route-price {
+    margin: 25px 0 5px 25px;
+    display: flex;
+}
+
+.common-text {
+    margin: 0 25px 0 0;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+}
+
+.time-and-car-number {
+    margin: 0 5px 10px 25px;
+    display: flex;
+    align-items: center;
+}
+
+.time-and-car-number .car-number {
+    margin-left: 25px;
+}
+
+.time-and-car-number .car-number p {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+}
+
+.time-and-car-number .time {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.time-and-car-number .time img {
+    margin: 0 5px 0 0;
+    height: 12px;
+    width: 12px;
+}
+
+.time-and-car-number .time p {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+}

@@ -1,0 +1,12 @@
+.dropdown-item-inactive {
+    height: 0;
+    border: 0;
+    font-size: 0;
+    transition: all 0.4s;
+    transform: scale(0) rotateX(90deg);
+}
+
+.dropdown-item-active {
+    height: 350px;
+    transition: all 0.4s;
+}

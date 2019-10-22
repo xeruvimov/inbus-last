@@ -1,9 +1,12 @@
 package com.vozili.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "customer")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
