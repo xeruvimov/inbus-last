@@ -29,15 +29,16 @@
     margin: 5px 50px 50px 50px;
 }
 
-footer {
+.footer-create-order {
     height: 50px;
     background-color: #aea3a1;
     display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: 0 0 5px 5px;
 }
 
-footer button {
+.footer-create-order button {
     margin-left: 50px;
     border-radius: 5px;
     border: 0;
@@ -46,7 +47,7 @@ footer button {
     background-color: #dad8c1;
 }
 
-footer button p {
+.footer-create-order button p {
     margin: 0;
     font-family: Roboto, sans-serif;
     font-size: 14px;

@@ -17,7 +17,21 @@ class ListOrders extends Component {
                 this.setState({
                     orders: commits
                 })
-            })
+            });
+
+        this.bookingOrder = this.bookingOrder.bind(this);
+    }
+
+    bookingOrder(id) {
+        fetch("http://localhost:8080/customer/booked/" + id, {
+            method: 'PUT'
+        }).then(response => {
+            if (response.ok) {
+                this.props.history.push("/personal")
+            } else {
+                console.log("not booking")
+            }
+        })
     }
 
     render() {
@@ -26,7 +40,7 @@ class ListOrders extends Component {
                 <SearchHeader/>
                 <div>
                     {this.state.orders.map(order => {
-                        return <Order key={order.id} {...order} type="none"/>
+                        return <Order key={order.id} {...order} buttonText="Забронировать" action={this.bookingOrder}/>
                     })}
                 </div>
             </main>

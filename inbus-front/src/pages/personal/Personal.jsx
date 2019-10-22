@@ -31,11 +31,39 @@ class Personal extends Component {
                 this.setState({
                     bookedOrder: commits
                 });
-                // console.table(this.state.bookedOrder)
             });
+
+        this.declineBookedOrder = this.declineBookedOrder.bind(this);
+        this.deletePersonalOrder = this.deletePersonalOrder.bind(this);
+    }
+
+    declineBookedOrder() {
+        fetch("http://localhost:8080/customer/booked", {
+            method: 'DELETE'
+        }).then(response => {
+            if (response.ok) {
+                this.setState({bookedOrder: null})
+            } else {
+                console.log("not delete booked order")
+            }
+        })
+    }
+
+    deletePersonalOrder(id) {
+        fetch("http://localhost:8080/orders/" + id, {
+            method: 'DELETE'
+        }).then(response => {
+            if (response.ok) {
+                this.setState({personalOrder: null})
+            } else {
+                console.log("not delete personal order")
+            }
+        })
     }
 
     render() {
+        const {bookedOrder, personalOrder} = this.state;
+
         return (
             <main>
                 <header>
@@ -44,14 +72,16 @@ class Personal extends Component {
 
                 <section id="booked_order">
                     <h4 align="center">Забронированные заказы</h4>
-                    {this.state.bookedOrder &&
-                    <Order key={this.state.bookedOrder.id} {...this.state.bookedOrder} type="booked"/>}
+                    {bookedOrder &&
+                    <Order key={bookedOrder.id} {...bookedOrder} buttonText="Отменить"
+                           action={this.declineBookedOrder}/>}
                 </section>
 
                 <section id="personal_order">
                     <h4 align="center">Мои заказы</h4>
-                    {this.state.personalOrder &&
-                    <Order key={this.state.personalOrder.id} {...this.state.personalOrder} type="personal"/>}
+                    {personalOrder &&
+                    <Order key={personalOrder.id} {...personalOrder} buttonText="Удалить"
+                           action={this.deletePersonalOrder}/>}
                 </section>
             </main>
         )

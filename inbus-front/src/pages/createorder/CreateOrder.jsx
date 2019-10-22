@@ -67,7 +67,7 @@ function CreateOrder(props) {
                 <textarea id="description" value={description} onInput={event => setDescription(event.target.value)}/>
             </section>
 
-            <footer>
+            <footer className={"footer-create-order"}>
                 <button onClick={createOrder}>
                     <p>Отправить</p>
                 </button>
